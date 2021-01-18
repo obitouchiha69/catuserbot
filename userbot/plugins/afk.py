@@ -51,7 +51,7 @@ async def set_not_afk(event):
     if "afk" not in current_message and "on" in USERAFK_ON:
         shite = await event.client.send_message(
             event.chat_id,
-            "`Back alive! No Longer afk.\nWas afk for " + endtime + "`",
+            "`Back alive.\nWas afk for " + endtime + "`",
         )
         USERAFK_ON = {}
         afk_time = None
@@ -167,9 +167,9 @@ async def _(event):
             afk_time = datetime.now()
         USERAFK_ON = f"on: {reason}"
         if reason:
-            await edit_delete(event, f"`I shall be Going afk! because ~` {reason}", 5)
+            await edit_delete(event, f"`  ~` {reason}", 5)
         else:
-            await edit_delete(event, f"`I shall be Going afk! `", 5)
+            await edit_delete(event, f"`   `", 5)
         if BOTLOG:
             if reason:
                 await event.client.send_message(
